@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { images, CustomImage } from "./images";
+import { Gallery } from "./Gallery";
 
 export default function App() {
   const [index, setIndex] = useState(-1);
@@ -20,11 +20,7 @@ export default function App() {
 
   return (
     <div>
-      <Gallery
-        images={images}
-        onClick={handleClick}
-        enableImageSelection={false}
-      />
+      <Gallery images={images} onClick={handleClick} />
       {!!currentImage && (
         /* @ts-ignore */
         <Lightbox
